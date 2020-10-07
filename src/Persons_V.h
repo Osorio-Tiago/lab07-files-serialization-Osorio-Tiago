@@ -12,11 +12,17 @@ class Persons_V {
 private:
 vector<Person*> Persons;
 public:
-
     void addPerson(Person*);
 
-    string toString();
-};
+    int size();
 
+    string toString();
+
+    ~Persons_V();
+
+protected:
+    vector<Person *> getPersons();
+    void setPersons(vector<Person*> persons);
+};
 
 #endif //MY_PROJECT_NAME_PERSONS_V_H
