@@ -4,9 +4,9 @@
 /*
 #ifndef MY_PROJECT_NAME_ITEXTSAVE_H
 #define MY_PROJECT_NAME_ITEXTSAVE_H
-#include "ISave.h"
+#include "ISave_Read.h"
 
-class ITextSave : public ISave{
+class ITextSave : public ISave_Read{
 public:
     ITextSave();
 };

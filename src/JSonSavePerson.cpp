@@ -33,6 +33,10 @@ json JSonSavePerson::serialPersona(int posicion, Persons_V arrayPersonas) {
 
     return jsonPersona;
 }
+/*
+void JSonSavePerson::load(Persons_V, string) {
 
+}
+*/
 JSonSavePerson::~JSonSavePerson() = default;
 

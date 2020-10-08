@@ -7,14 +7,15 @@
 #include <sstream>
 #include<fstream>
 #include "Persons_V.h"
-#include "ISave.h"
+#include "ISave_Read.h"
 #include "Person.h"
 using namespace std;
 
-class BinarySavePerson : public ISave{
+class BinarySavePerson : public ISave_Read{
 
 public:
     void save(Persons_V, string fileName) override;
+    //void load(Persons_V&, string) override;
 };
 
 

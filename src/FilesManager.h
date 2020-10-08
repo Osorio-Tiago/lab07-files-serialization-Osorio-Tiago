@@ -4,11 +4,12 @@
 
 #ifndef MY_PROJECT_NAME_FILESMANAGER_H
 #define MY_PROJECT_NAME_FILESMANAGER_H
-#include "ISave.h"
+#include "ISave_Read.h"
 
 class FilesManager {
 public:
-    static void serialize(ISave*, const Persons_V&, string);
+    static void serialize(ISave_Read*, const Persons_V&, string);
+    //static void deserialize(ISave_Read*, Persons_V&, string);
 
 };
 

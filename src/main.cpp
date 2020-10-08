@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Persons_V.h"
 #include "BinarySavePerson.h"
-#include "ISave.h"
+#include "ISave_Read.h"
 #include "JSonSavePerson.h"
 #include "FilesManager.h"
 int main(){
@@ -16,13 +16,12 @@ int main(){
     personsArray.addPerson(new Person(123456, 20, "Spiderman"));
     personsArray.addPerson(new Person(70609401, 23, "Shrek"));
 
-    ISave* guardar = new JSonSavePerson();
+    ISave_Read* guardar = new JSonSavePerson();
 
-    ISave* guardaBinario = new BinarySavePerson();
+    ISave_Read* guardaBinario = new BinarySavePerson();
 
-  //  manager.serialize(guardar, personsArray, "ArchivoJSonPersonas.txt");
-    manager.serialize(guardaBinario, personsArray, "ArchivoBinarioPersonas.txt");
-  //  guardaBinario->save(personsArray, "ArchivoBinarioPersonas.txt");
+    FilesManager::serialize(guardar, personsArray, "ArchivoJSonPersonas.txt");
+    FilesManager::serialize(guardaBinario, personsArray, "ArchivoBinarioPersonas.txt");
 
     //guardar->save(personsArray, "ArchivoJSonPersonas.txt");
 

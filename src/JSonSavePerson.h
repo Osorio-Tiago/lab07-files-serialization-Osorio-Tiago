@@ -5,15 +5,16 @@
 #ifndef MY_PROJECT_NAME_JSONSAVE_H
 #define MY_PROJECT_NAME_JSONSAVE_H
 #include <../lib/nlohmann/json.hpp>
-#include "ISave.h"
+#include "ISave_Read.h"
 
 using json = nlohmann::json;
 
-class JSonSavePerson : public ISave{
+class JSonSavePerson : public ISave_Read{
 
 public:
     void save(Persons_V, string) override;
 
+   // void load(Persons_V, string) override;
     static json serialPersona(int posicion, Persons_V);
 
     ~JSonSavePerson() override;
