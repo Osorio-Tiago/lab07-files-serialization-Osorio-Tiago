@@ -4,13 +4,12 @@
 
 #ifndef MY_PROJECT_NAME_ISAVE_H
 #define MY_PROJECT_NAME_ISAVE_H
+#include "Persons_V.h"
 #include <sstream>
 
 class ISave {
 public:
     virtual ~ISave();
-    virtual std::string saveData() = 0;
+    virtual void save(Persons_V,std::string file) = 0;
 };
-
-
 #endif //MY_PROJECT_NAME_ISAVE_H

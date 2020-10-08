@@ -3,18 +3,26 @@
 //
 #include <iostream>
 #include "Persons_V.h"
-#include "BinarySave.h"
+#include "BinarySavePerson.h"
+#include "ISave.h"
+#include "JSonSavePerson.h"
 int main(){
 
     Persons_V personsArray;
 
     personsArray.addPerson(new Person(604630008,19,"Tiago"));
     personsArray.addPerson(new Person(123456, 20, "Spiderman"));
+    personsArray.addPerson(new Person(70609401, 23, "Shrek"));
+
+    ISave* guardar = new JSonSavePerson();
+
+    ISave* guardaBinario = new BinarySavePerson();
 
 
-    BinarySave guardarPrueba("ArchivoBinarioPersonas.txt");
+    guardaBinario->save(personsArray, "ArchivoBinarioPersonas.txt");
 
-    guardarPrueba.save(personsArray);
+    guardar->save(personsArray, "ArchivoJSonPersonas.txt");
+
     std::cout<< personsArray.toString();
 
 }

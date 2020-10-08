@@ -22,3 +22,7 @@ Persons_V::~Persons_V(){ Persons.clear(); }
 vector<Person *> Persons_V::getPersons() {return Persons; }
 
 void Persons_V::setPersons(vector<Person *> persons) { this->Persons = std::move(persons); }
+
+Person* Persons_V::getPerson(int position) {
+    return Persons[position];
+}

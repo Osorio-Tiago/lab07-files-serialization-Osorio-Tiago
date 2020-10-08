@@ -20,6 +20,8 @@ public:
 
     ~Persons_V();
 
+    Person* getPerson(int position);
+
 protected:
     vector<Person *> getPersons();
     void setPersons(vector<Person*> persons);

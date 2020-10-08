@@ -3,3 +3,5 @@
 //
 
 #include "TextSave.h"
+
+ITextSave::ITextSave() = default;
