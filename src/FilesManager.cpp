@@ -6,7 +6,7 @@
 
 #include <utility>
 
-void FilesManager::serialize(ISave_Read * typeSerial, const Persons_V& array, string fileName) {
+void FilesManager::serialize(ISave_Read * typeSerial, Persons_V array, string fileName) {
     typeSerial->save(array,std::move(fileName));
 }
 /*

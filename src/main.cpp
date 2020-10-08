@@ -12,9 +12,9 @@ int main(){
     FilesManager manager;
     Persons_V personsArray;
 
-    personsArray.addPerson(new Person(604630008,19,"Tiago"));
-    personsArray.addPerson(new Person(123456, 20, "Spiderman"));
-    personsArray.addPerson(new Person(70609401, 23, "Shrek"));
+    personsArray.addPerson( Person(604630008,19,"Tiago"));
+    personsArray.addPerson( Person(123456, 20, "Spiderman"));
+    personsArray.addPerson( Person(70609401, 23, "Shrek"));
 
     ISave_Read* guardar = new JSonSavePerson();
 
@@ -23,8 +23,11 @@ int main(){
     FilesManager::serialize(guardar, personsArray, "ArchivoJSonPersonas.txt");
     FilesManager::serialize(guardaBinario, personsArray, "ArchivoBinarioPersonas.txt");
 
-    //guardar->save(personsArray, "ArchivoJSonPersonas.txt");
 
     std::cout<< personsArray.toString();
+
+
+    delete guardar;
+    delete guardaBinario;
 
 }

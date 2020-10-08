@@ -8,7 +8,7 @@
 
 class FilesManager {
 public:
-    static void serialize(ISave_Read*, const Persons_V&, string);
+    static void serialize(ISave_Read*, Persons_V, string);
     //static void deserialize(ISave_Read*, Persons_V&, string);
 
 };

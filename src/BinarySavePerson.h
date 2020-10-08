@@ -15,6 +15,8 @@ class BinarySavePerson : public ISave_Read{
 
 public:
     void save(Persons_V, string fileName) override;
+
+
     //void load(Persons_V&, string) override;
 };
 

@@ -10,9 +10,9 @@
 
 class Persons_V {
 private:
-vector<Person*> Persons;
+vector<Person> Persons;
 public:
-    void addPerson(Person*);
+    void addPerson(Person);
 
     int size();
 
@@ -20,7 +20,7 @@ public:
 
     ~Persons_V();
 
-    Person* getPerson(int position);
+    Person getPerson(int position);
 };
 
 #endif //MY_PROJECT_NAME_PERSONS_V_H

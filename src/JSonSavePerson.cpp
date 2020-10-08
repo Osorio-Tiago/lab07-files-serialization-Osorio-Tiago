@@ -26,10 +26,10 @@ for (int i = 0; i < arrayPersonas.size(); i++) {
 
 json JSonSavePerson::serialPersona(int posicion, Persons_V arrayPersonas) {
     json jsonPersona;
-        Person* persAux = arrayPersonas.getPerson(posicion);
-        jsonPersona["Identification"] = persAux->getId();
-        jsonPersona["Age"] = persAux->getAge();
-        jsonPersona["Name"] = persAux->getName();
+        Person persAux = arrayPersonas.getPerson(posicion);
+        jsonPersona["Identification"] = persAux.getId();
+        jsonPersona["Age"] = persAux.getAge();
+        jsonPersona["Name"] = persAux.getName();
 
     return jsonPersona;
 }
