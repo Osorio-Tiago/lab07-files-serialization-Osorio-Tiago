@@ -6,8 +6,10 @@
 #include "BinarySavePerson.h"
 #include "ISave.h"
 #include "JSonSavePerson.h"
+#include "FilesManager.h"
 int main(){
 
+    FilesManager manager;
     Persons_V personsArray;
 
     personsArray.addPerson(new Person(604630008,19,"Tiago"));
@@ -18,10 +20,11 @@ int main(){
 
     ISave* guardaBinario = new BinarySavePerson();
 
+  //  manager.serialize(guardar, personsArray, "ArchivoJSonPersonas.txt");
+    manager.serialize(guardaBinario, personsArray, "ArchivoBinarioPersonas.txt");
+  //  guardaBinario->save(personsArray, "ArchivoBinarioPersonas.txt");
 
-    guardaBinario->save(personsArray, "ArchivoBinarioPersonas.txt");
-
-    guardar->save(personsArray, "ArchivoJSonPersonas.txt");
+    //guardar->save(personsArray, "ArchivoJSonPersonas.txt");
 
     std::cout<< personsArray.toString();
 

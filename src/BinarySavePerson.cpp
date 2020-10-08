@@ -7,13 +7,15 @@
 
 
 void BinarySavePerson::save(Persons_V arrayPersons, string fileName) {
-    ofstream archivo(fileName, ios::out);
+
+    ofstream archivo;
     try { archivo.open(fileName, ios::app | ios::binary); }
 
     catch (std::ifstream::failure a) { std::cout<< "F bro"; }
 
-    for(int i = 0; i < arrayPersons.size(); i++) {
+    for(int i = 0; i < arrayPersons.size(); i++)
         archivo.write((char *) &arrayPersons, sizeof(arrayPersons));
-    }
     archivo.close();
 }
+
+
