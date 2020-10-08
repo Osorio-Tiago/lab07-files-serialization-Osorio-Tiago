@@ -11,8 +11,7 @@ void BinarySavePerson::save(Persons_V arrayPersons, string fileName) {
 
     try { archivo.open(fileName, ios::app | ios::binary); }
 
-    catch (std::ifstream::failure a) { std::cout << "F bro"; }
-
+    catch (std::ifstream::failure a) { exit(1); }
 
     for(int i = 0; i < arrayPersons.size(); i++) {
         auto person = arrayPersons.getPerson(i);
@@ -22,7 +21,7 @@ void BinarySavePerson::save(Persons_V arrayPersons, string fileName) {
     archivo.close();
 }
 
-/*
+
 void BinarySavePerson::load(Persons_V &arrayPersonas, string fileName) {
         ifstream archivo;
         //se crea una variable ifstream para poder usar los metodos necesarios para leer el archivo como .open, .read , .close ,...
@@ -42,5 +41,4 @@ void BinarySavePerson::load(Persons_V &arrayPersonas, string fileName) {
         archivo.close();
         //se cerro el archivo
 }
-*/
 

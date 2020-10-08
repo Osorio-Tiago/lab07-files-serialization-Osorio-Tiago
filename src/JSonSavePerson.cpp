@@ -5,12 +5,12 @@
 #include <fstream>
 #include "JSonSavePerson.h"
 
-void JSonSavePerson::save(Persons_V arrayPersonas, string fileName)
-{
+void JSonSavePerson::save(Persons_V arrayPersonas, string fileName){
+
     vector<json> arraySerializar;
 
     arraySerializar.reserve(arrayPersonas.size());
-for (int i = 0; i < arrayPersonas.size(); i++) {
+    for (int i = 0; i < arrayPersonas.size(); i++) {
         arraySerializar.emplace_back(serialPersona(i, arrayPersonas));
     }
     ofstream archivo;
@@ -19,7 +19,6 @@ for (int i = 0; i < arrayPersonas.size(); i++) {
     catch (ifstream::failure a) {
         exit(1);
     }
-    //para la lista de personas poner:archivo << personasSerializando<< '\n'; Intente poner el '\n' pero no sirvio jsjs
     archivo << arraySerializar;
     archivo.close();
 }
@@ -33,10 +32,38 @@ json JSonSavePerson::serialPersona(int posicion, Persons_V arrayPersonas) {
 
     return jsonPersona;
 }
-/*
-void JSonSavePerson::load(Persons_V, string) {
 
+void JSonSavePerson::load(Persons_V& arrayPers, string fileName){
+    ifstream archivo;
+    json vector;
+    try { archivo.open(fileName, ios::binary); }
+    catch (ifstream::failure a) { exit(1);}
+
+    archivo>>vector;
+    arrayPers = convertToObject(vector);
 }
-*/
+
+Person JSonSavePerson::deserPerson(json array) {
+    Person person1;
+
+    person1.setId(array["Identification"]);
+    person1.setAge(array["Age"]);
+    person1.setName(array["Name"]);
+
+    return person1;
+}
+
+vector<Person> JSonSavePerson::convertToObject(const json& array) {
+
+    vector<Person> arrayAuxPerson;
+    vector<json> arrayAuxJson = array;
+    Person personAux;
+    for(auto & i : arrayAuxJson){
+        personAux = deserPerson(i);
+        arrayAuxPerson.push_back(personAux);
+    }
+    return arrayAuxPerson;
+}
+
 JSonSavePerson::~JSonSavePerson() = default;
 

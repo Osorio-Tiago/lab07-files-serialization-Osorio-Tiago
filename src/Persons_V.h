@@ -10,7 +10,7 @@
 
 class Persons_V {
 private:
-vector<Person> Persons;
+    vector<Person> Persons;
 public:
     void addPerson(Person);
 
@@ -21,6 +21,10 @@ public:
     ~Persons_V();
 
     Person getPerson(int position);
+
+    Persons_V(vector<struct Person> vector);
+
+    Persons_V();
 };
 
 #endif //MY_PROJECT_NAME_PERSONS_V_H

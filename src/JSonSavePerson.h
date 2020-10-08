@@ -14,7 +14,12 @@ class JSonSavePerson : public ISave_Read{
 public:
     void save(Persons_V, string) override;
 
-   // void load(Persons_V, string) override;
+    void load(Persons_V&, string) override;
+
+    static Person deserPerson(json);
+
+    static vector<Person> convertToObject(const json&);
+
     static json serialPersona(int posicion, Persons_V);
 
     ~JSonSavePerson() override;

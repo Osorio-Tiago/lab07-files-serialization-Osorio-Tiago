@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Persons_V.h"
 #include "BinarySavePerson.h"
-#include "ISave_Read.h"
 #include "JSonSavePerson.h"
 #include "FilesManager.h"
 int main(){
@@ -25,7 +24,6 @@ int main(){
 
 
     std::cout<< personsArray.toString();
-
 
     delete guardar;
     delete guardaBinario;

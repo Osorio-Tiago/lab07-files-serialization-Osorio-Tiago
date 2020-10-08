@@ -20,3 +20,9 @@ int Persons_V::size() { return Persons.size(); }
 Persons_V::~Persons_V(){ Persons.clear(); }
 
 Person Persons_V::getPerson(int position) { return Persons[position]; }
+
+Persons_V::Persons_V(vector<struct Person> vector) { Persons = std::move(vector); }
+
+Persons_V::Persons_V() {
+
+}

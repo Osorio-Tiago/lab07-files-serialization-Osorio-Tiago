@@ -42,4 +42,6 @@ string Person::toString() const {
     return output.str();
 }
 
+Person::Person() = default;
+
 Person::~Person() = default;

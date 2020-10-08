@@ -12,10 +12,13 @@ using namespace std;
 
 class Person {
 private:
-    int id;
-    int age;
+    int id{};
+    int age{};
     string name;
 public:
+
+    Person();
+
     Person(int id, int age, string name);
 
     virtual ~Person();

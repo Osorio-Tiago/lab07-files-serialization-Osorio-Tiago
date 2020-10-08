@@ -17,7 +17,7 @@ public:
     void save(Persons_V, string fileName) override;
 
 
-    //void load(Persons_V&, string) override;
+    void load(Persons_V&, string);
 };
 
 

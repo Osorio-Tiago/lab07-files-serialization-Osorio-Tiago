@@ -11,6 +11,6 @@ class ISave_Read {
 public:
     virtual ~ISave_Read();
     virtual void save(Persons_V,std::string file) = 0;
-   // virtual void load(Persons_V&, string file) = 0;
+    virtual void load(Persons_V&, string file) = 0;
 };
 #endif //MY_PROJECT_NAME_ISAVE_READ_H
