@@ -16,12 +16,13 @@ int main(){
     personsArray.addPerson( Person(70609401, 23, "Shrek"));
 
     ISave_Read* guardar = new JSonSavePerson();
-
     ISave_Read* guardaBinario = new BinarySavePerson();
 
     FilesManager::serialize(guardar, personsArray, "ArchivoJSonPersonas.txt");
     FilesManager::serialize(guardaBinario, personsArray, "ArchivoBinarioPersonas.txt");
 
+
+    //Los archivos se crearan despues de compilar xd
 
     std::cout<< personsArray.toString();
 
