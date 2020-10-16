@@ -12,9 +12,11 @@ class Persons_V {
 private:
     vector<Person> Persons;
 public:
-    void addPerson(Person);
+    void addPerson(const Person&);
 
     int size();
+
+    const vector<Person> &getPersons() const;
 
     string toString();
 

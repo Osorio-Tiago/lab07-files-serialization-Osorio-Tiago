@@ -67,3 +67,57 @@ vector<Person> JSonSavePerson::convertToObject(const json& array) {
 
 JSonSavePerson::~JSonSavePerson() = default;
 
+
+/*
+ * V2.0 del codigo
+ *
+ * Profe hice todo igual a como usted lo serializo en su ejemplo pero hay 2 errores que no pude solucionar
+ * Del todo no se que hacer entonces se lo deje aqui comentado el codigo para que cuando revise el laboratio lo
+ * pueda revisar si asi lo desea jsjs
+ *
+ * Es solo descomentar esta seccion y comentar la seccion de arriba, ahi le saldran los 2 errores que no logro solucionar
+ *
+ *
+void JSonSavePerson::save(Persons_V arrayPersonas, string fileName){
+    serialize(arrayPersonas, fileName);
+}
+
+void JSonSavePerson::load(Persons_V& arrayPers, string fileName){
+    arrayPers = deserialize(fileName);
+}
+
+string JSonSavePerson::serialize(Persons_V& arrayPers, string fileName) {
+    ofstream archivo;
+    try { archivo.open(fileName, ios::binary); }
+    catch (ifstream::failure a) {
+        exit(1);
+    }
+    json jsonData(arrayPers);  //Error #1 que no entiendo porque para (Lo probe en su programa y todo sirve bien)
+    string jsonArray = jsonData.dump();
+    archivo << jsonArray;
+}
+
+vector<Person> JSonSavePerson::deserialize(string _data) {
+    json jsonData = json::parse(_data);
+    vector<Person> personList = jsonData;  //Error #2 que no entiendo porque para
+                                          // (Lo probe en su programa y todo sirve bien)
+    return personList;
+}
+
+JSonSavePerson::~JSonSavePerson() = default;
+
+
+void JSonSavePerson::to_json(json &_json, const Person &_person) {
+    _json = json{
+            {"IDENTIFICATION", _person.getId()},
+            {"AGE", _person.getAge()},
+            {"NAME", _person.getName()}
+    };
+}
+
+void JSonSavePerson::from_json(const json &_json, Person &_person) {
+    _person.setId(_json.at("IDENTIFICATION").get<int>());
+    _person.setAge(_json.at("AGE").get<int>());
+    _person.setName(_json.at("NAME").get<std::string>());
+}
+*/

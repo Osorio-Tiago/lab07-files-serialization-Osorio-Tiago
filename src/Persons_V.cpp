@@ -6,7 +6,7 @@
 
 #include <utility>
 
-void Persons_V::addPerson(Person person1){ Persons.emplace_back(person1); }
+void Persons_V::addPerson(const Person& person1){ Persons.emplace_back(person1); }
 
 string Persons_V::toString(){
     ostringstream output;
@@ -21,8 +21,12 @@ Persons_V::~Persons_V(){ Persons.clear(); }
 
 Person Persons_V::getPerson(int position) { return Persons[position]; }
 
-Persons_V::Persons_V(vector<struct Person> vector) { Persons = std::move(vector); }
-
-Persons_V::Persons_V() {
-
+Persons_V::Persons_V(vector<struct Person> vector) {
+    Persons = std::move(vector);
 }
+
+const vector<Person> &Persons_V::getPersons() const {
+    return Persons;
+}
+
+Persons_V::Persons_V() = default;
